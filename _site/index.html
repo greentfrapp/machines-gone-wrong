@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:description" content="Inspired by recent ethical concerns in AI, Machines Gone Wrong is an online guide to help AI practitioners get up to date with socio-technical discussions surrounding AI systems." />
+  	<meta property="og:image" content="https://greentfrapp.github.io/project-asimov/assets/frontispiece.jpg" />
+	<link rel="shortcut icon" href="https://greentfrapp.github.io/assets/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="https://greentfrapp.github.io/assets/favicon.ico" type="image/x-icon"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Machines Gone Wrong</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="Machines Gone Wrong" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="http://localhost:4000/" />
+<meta property="og:url" content="http://localhost:4000/" />
+<script type="application/ld+json">
+{"@type":"WebSite","url":"http://localhost:4000/","headline":"Machines Gone Wrong","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/icon.min.css" />
+	<link rel="stylesheet" href="/assets/semantic.min.css">
+	<link rel="stylesheet" href="/assets/main.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.2/d3.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+	<script src="https://unpkg.com/vue"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js"></script>
+	<script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+	<!-- <script src="https://unpkg.com/scrollama"></script> -->
+	<!-- <script src="/assets/guide/scroller.js"></script> -->
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+	<script type="text/front-matter">
+	title: "Machines Gone Wrong"
+	description: "Inspired by recent ethical concerns in AI, Machines Gone Wrong is an online guide to help AI practitioners get up to date with socio-technical discussions surrounding AI systems."
+	authors:
+	- Lim Swee Kiat: https://greentfrapp.github.io
+	affiliations:
+	- Singapore University of Technology and Design: https://urbanscience.sutd.edu.sg/
+	</script>
+</head><body id="guide-body"><div class="ui sidebar inverted vertical menu light">
+  <a class="item chapter" href="/">
+    Introduction
+  </a>
+  <a class="item chapter" href="/basics/">
+    Getting Started
+  </a>
+  <a class="item subsection" href="/basics/#ethics-of-artificial-intelligence-ai-ethics">
+    Ethics of Artificial Intelligence
+  </a>
+  <a class="item subsection" href="/basics/#artificial-intelligence-systems-ais">
+    Artificial Intelligence Systems
+  </a>
+  <a class="item subsection" href="/basics/#what-is-different-about-ai">
+    What is different about AI?
+  </a>
+  <a class="item subsection" href="/basics/#the-most-important-question">
+    The Most Important Question
+  </a>
+  <a class="item chapter" href="/fairness/">
+    Algorithmic Bias
+  </a>
+  <a class="item section" href="/fairness/">
+    Understanding Fairness
+  </a>
+  <a class="item subsection" href="/fairness/#disparate-treatment-disparate-impact">
+    Disparate Treatment and Disparate Impact
+  </a>
+  <a class="item subsection" href="/fairness/#a-fair-fat-pet-predictor">
+    A Fair Fat Pet Predictor
+  </a>
+	<a class="item subsection" href="/fairness/#the-impossibility-theorem">
+    The Impossibility Theorem
+  </a>
+  <a class="item subsection" href="/fairness/#context-free-fairness">
+    Context-Free Fairness
+  </a>
+  <a class="item subsection" href="/fairness/#learning-about-the-context">
+    Learning about the Context
+  </a>
+  <a class="item section" href="/bias_i/">
+    Understanding Bias I
+  </a>
+  <a class="item subsection" href="/bias_i/#two-types-of-harms">
+    Two Types of Harms
+  </a>
+  <a class="item subsection" href="/bias_i/#harms-of-allocation">
+    Harms of Allocation
+  </a>
+  <a class="item subsection" href="/bias_i/#harms-of-representation">
+    Harms of Representation
+  </a>
+  <a class="item section" href="/bias_ii/">
+    Understanding Bias II
+  </a>
+  <a class="item subsection" href="/bias_ii/#bias-from-data">
+    Bias from Data
+  </a>
+  <a class="item subsection" href="/bias_ii/#bias-from-algorithm-design">
+    Bias from Algorithm Design
+  </a>
+  <a class="item subsection" href="/bias_ii/#bias-from-deployment">
+    Bias from Deployment
+  </a>
+  <a class="item section" href="/checklist/">
+    Summary Checklist
+  </a>
+  <a class="item section" href="/resources/">
+    Resources
+  </a>
+  <!-- <a class="item subsection" href="/resources/#tools">
+    Tools
+  </a>
+  <a class="item subsection" href="/resources/#datasets">
+    Datasets
+  </a>
+  <a class="item subsection" href="/resources/#readings">
+    Readings
+  </a> -->
+  <a class="item chapter" href="/about/">
+    About
+  </a><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <!-- <h2 class="footer-heading"></h2> -->
+
+    <div class="footer-col-wrapper">
+
+      <!-- <div class="footer-col footer-col-2"> --><ul class="social-media-list"><li><a href="https://github.com/greentfrapp"><svg class="svg-icon" viewBox="0 0 16 16"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <!-- <span class="username">greentfrapp</span> --></a></li><li><a href="https://www.linkedin.com/in/sweekiat"><svg class="svg-icon" viewBox="0 0 16 16"><use xlink:href="/assets/minima-social-icons.svg#linkedin"></use></svg> <!-- <span class="username">sweekiat</span> --></a></li></ul>
+<!-- </div> -->
+
+      <!-- <div class="footer-col footer-col-3">
+        <p></p>
+      </div> -->
+    </div>
+
+  </div>
+
+</footer>
+</div><div id="app" class="pusher light">
+		<div id="nav" class="fixed navbar-hidden" :class="{light: !darkmode}">
+			<div class="logo">
+				<i class="icon bars large toggle-menu"></i>
+				<div style="width: 140px; display: inline-block; vertical-align: middle;" class="toggle-menu">
+	  			<a> 
+					Machines Gone Wrong
+				</a>
+				</div>
+				<div class="ui toggle checkbox" id="dark-mode-switch">
+				  <input type="checkbox" name="darkmode" v-model="darkmode" @click="toggleDarkmode">
+				  <label>Dark Mode</label>
+				</div>
+			</div>
+		</div>
+		<div :class="{light: !darkmode}">
+			<a href="#start" style="z-index: -1000;">
+				<!-- <img id="cover-image" src="/assets/glitch_cover.gif" alt="Machines Gone Wrong" /> -->
+				<div id="cover-image" style="z-index: -1000;"></div>
+			</a>
+			<div id="start" class="content guide-content">
+				<p style="display: inline-block;">
+					Often, when we first fall in love, the person of our affection seems to be perfect. But the happy honeymoon is cut short when we realize they are not <i>that</i> perfect. Turns out, they've got annoying habits. They wake up with bad breath. They burp. And oh my god their farts smell just as bad as ours. 
+				</p>
+				<img class="comic" width="270px" src="/assets/comics/honeymoon_1.png" title="What do you mean they use the toilet?" alt="When you realize the love of your life is human." />
+				<p>
+					In the same way, our honeymoon with artificial intelligence (AI) is quickly giving way to a realization that AI is not perfect. Turns out, AI is not neutral. It is not necessarily right or fair. The recommendations of AI systems can be just as sexist or racist as any human.
+				</p>
+				<img class="comic" width="270px" src="/assets/comics/honeymoon_2.png" title="%THE EARTH IS FLAT.%  NOOO." alt="When you realize the AI in your life is biased." />
+				<div class="step">
+				<p>
+					There are so many ways that AI can go wrong. There are so many guidelines from governments, companies, non-governmental organizations (NGOs). There are so many new algorithms, datasets and papers on ethical AI. It can all be a bit hard to take in, so this guide is here to help.
+				</p>
+				<img class="comic" width="411px" src="/assets/comics/honeymoon_3.png" title="%FART%" alt="Send. Help. Please." />
+				</div>
+			<hr/>
+				<p>
+					At the moment, the guide is targeted at AI practitioners and assumes some understanding of AI technologies. This mainly includes researchers and engineers. But it may also be useful for anyone helping to implement or recommend AI solutions.
+				</p>
+				<p>
+					The current version of the guide focuses on <b>algorithmic bias</b>. Future work will include other AI-related problems such as black boxes, privacy violations, ghost work and misinformation.
+				</p>
+				<p>
+					Here are some questions this guide tries to answer at different stages of the AI system lifecycle.
+				</p>
+				<br/>
+				<div :class="introQuestionsClasses">
+					<div class="fluid card">
+						<div class="content">
+							<div class="header">Taking Up the Project</div>
+							<div class="description">
+								<ul>
+									<li>What are the different ways to define fairness?</li>
+									<li>When is AI <b>not</b> the answer?</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<div class="content">
+							<div class="header">Collecting Data</div>
+							<div class="description">
+								<ul>
+									<li>What are possible sources of bias in datasets?</li>
+									<li>What are some open-source datasets that are more diverse?</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<div class="content">
+							<div class="header">Training</div>
+							<div class="description">
+								<ul>
+									<li>What are possible sources of bias in the training process?</li>
+									<li>What's wrong with using pre-trained models and external datasets?</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<div class="content">
+							<div class="header">Deployment and Maintenance</div>
+							<div class="description">
+								<ul>
+									<li>What should our client and users know?</li>
+									<li>What are bias-related concerns when deploying an AI system?</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<tofro prevtext="" prevlink="" nexttext="On to the Basics!" nextlink="basics/"></tofro>
+			</div>
+		</div><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <!-- <h2 class="footer-heading"></h2> -->
+
+    <div class="footer-col-wrapper">
+
+      <!-- <div class="footer-col footer-col-2"> --><ul class="social-media-list"><li><a href="https://github.com/greentfrapp"><svg class="svg-icon" viewBox="0 0 16 16"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <!-- <span class="username">greentfrapp</span> --></a></li><li><a href="https://www.linkedin.com/in/sweekiat"><svg class="svg-icon" viewBox="0 0 16 16"><use xlink:href="/assets/minima-social-icons.svg#linkedin"></use></svg> <!-- <span class="username">sweekiat</span> --></a></li></ul>
+<!-- </div> -->
+
+      <!-- <div class="footer-col footer-col-3">
+        <p></p>
+      </div> -->
+    </div>
+
+  </div>
+
+</footer>
+<div id="cookieconsent"></div>
+		</div>
+		<script src="/assets/js/js.cookie.js"></script>
+		<script src="/assets/js/bibliography.js"></script>
+		<script src="/assets/js/guide_tidbit.js"></script>
+		<script src="/assets/js/guide_tofro.js"></script>
+		<script src="/assets/js/guide.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+		<script src="/assets/js/cookieconsent.js"></script>
+		<script type="text/javascript">
+			// const scroller = scrollama()
+			// const height = document.documentElement.clientHeight
+			// const width = document.documentElement.clientWidth
+			// svg = d3.select("body").append("svg")
+			// 	.attr("height", height)
+			// 	.attr("width", width)
+			// 	.style("position", "fixed")
+			// 	.style("top", 0)
+			// 	.style("left", 0)
+			// title_1 = svg.append("g")
+			// 	.attr("transform", `translate(${width/2},${height/2})`)
+			// title_1.append("rect")
+			// 	.attr("class", "headline")
+			// 	.attr("fill", "#FFFFFF")
+			// 	.attr("height", 100)
+			// 	.attr("width", 510)
+			// 	.attr("x", -10)
+			// 	.attr("y", 0)
+			// 	.attr("opacity", 0)
+			// title_1.append("text")
+			// 	.attr("class", "headline header")
+			// 	.attr("opacity", 0)
+			// 	.attr("y", "1em")
+			// 	.attr("font-size", 32)
+			// 	.attr("font-weight", 600)
+			// 	.attr("font-family","Crimson Text")
+			// title_1.select("text.header")
+			// 	.append("tspan")
+			// 	.attr("x", 0)
+			// 	.text("New AI can guess whether you're gay")
+			// title_1.select("text.header")
+			// 	.append("tspan")
+			// 	.attr("x", 0)
+			// 	.attr("dy", "1em")
+			// 	.text("or straight from a photograph")
+			// title_1.append("text")
+			// 	.attr("class", "headline subheader")
+			// 	.attr("opacity", 0)
+			// 	.attr("x", 0)
+			// 	.attr("y", "5.5em")
+			// 	.attr("font-size", 16)
+			// 	.attr("font-weight", 400)
+			// 	.attr("font-family","Roboto")
+			// title_1.select("text.subheader")
+			// 	.append("tspan")
+			// 	.attr("font-weight", 600)
+			// 	.text("Sam Levin")
+			// title_1.select("text.subheader")
+			// 	.append("tspan")
+			// 	.text(" Fri 8 Sep 2017")
+
+			// scroller
+			//   .setup({
+			//     step: '.step'
+			//   })
+			//   .onStepEnter(response => {
+			//     d3.selectAll(".headline").transition().duration(500)
+			//     	.attr("opacity", 1)
+			//   })
+			//   .onStepExit(response => {
+			//     d3.selectAll(".headline").transition().duration(500)
+			//     	.attr("opacity", 0)
+			//   });
+
+			// window.addEventListener('resize', scroller.resize);
+		</script>
+	</body>
+
+</html>
