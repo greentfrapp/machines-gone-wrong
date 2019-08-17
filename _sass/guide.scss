@@ -355,6 +355,10 @@ body#guide-body {
 		color: $guide-antitext-color;
 		font-family: 'Open Sans', sans-serif;
 
+		div.header {
+			text-align: center;
+		}
+
 		div.content {
 			line-height: 1.5;
 			width: 85%;
@@ -362,6 +366,7 @@ body#guide-body {
 			ol, ul, p {
 				font-family: 'Open Sans', sans-serif;
 				font-size: 18px;
+				padding: 0px 20px;
 			}
 
 			ul {
