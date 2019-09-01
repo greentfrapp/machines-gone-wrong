@@ -326,6 +326,12 @@ body#guide-body {
 	.tofro {
 		margin: 100px 0;
 		font-family: 'Lora', serif;
+		display: block;
+		border-top: 1px solid $guide-text-color;
+		border-bottom: 1px solid $guide-text-color;
+		@media screen and (min-width: 600px) {
+			height: 2.2rem;
+		}
 		a {
 			color: $guide-text-color;
 			text-decoration: none;
@@ -337,16 +343,22 @@ body#guide-body {
 			margin: 0;
 			margin-bottom: 0.3em;
 		}
-		div {
-			height: 2em;
-		}
+		// div {
+		// 	height: 2em;
+		// }
 		.prev {
 			display: inline-block;
-			float: left;
+			margin-right: 10px;
+			@media screen and (min-width: 600px) {
+				float: left;
+			}
 		}
 		.next {
 			display: inline-block;
-			float: right;
+			margin-left: 10px;
+			@media screen and (min-width: 600px) {
+			    float: right;
+			}
 		}
 	}
 
@@ -700,6 +712,11 @@ body#guide-body div#nav.light {
 			color: $guide-antitext-color;
 			background-color: lighten($guide-annotation-color, 10%);
 		}
+	}
+
+	.tofro {
+		border-top: 1px solid $guide-antitext-color;
+		border-bottom: 1px solid $guide-antitext-color;
 	}
 
 	.tofro a {
