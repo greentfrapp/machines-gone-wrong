@@ -1,0 +1,26 @@
+<html>
+  <body>
+    <iframe src="http://localhost:8000/1.html"></iframe>
+    <script>
+      console.log(JSON.parse(window.localStorage.getItem('user')))
+      window.onload = function() {
+        var iframe = document.getElementsByTagName('iframe')[0];
+        var win;
+        // some browser (don't remember which one) throw exception when you try to access
+        // contentWindow for the first time, it work when you do that second time
+        try {
+          win = iframe.contentWindow;
+        } catch(e) {
+          win = iframe.contentWindow;
+        }
+        // save obj in subdomain localStorage
+        window.onmessage = function(e) {
+          // this will log "Jack"
+          console.log(JSON.parse(e.data).name);
+        };
+        // // load previously saved data
+        win.postMessage(JSON.stringify({key: 'storage', method: "get"}), "*");
+    };
+    </script>
+  </body>
+</html>
