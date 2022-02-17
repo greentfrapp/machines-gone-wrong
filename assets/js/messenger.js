@@ -7,8 +7,8 @@ function messageHandler(event) {
   } else if (action == 'get') {
     event.source.postMessage({
       action: 'returnData',
-      key,
-      JSON.parse(window.localStorage.getItem(key))
+      key: key,
+      value: JSON.parse(window.localStorage.getItem(key))
     }, '*')
   }
 }
