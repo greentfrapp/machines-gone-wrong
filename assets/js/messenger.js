@@ -1,6 +1,6 @@
 console.log('messenger loaded')
-window.addEventListener("message", messageHandler, false);
 function messageHandler(event) {
+  console.log('handling message')
   const { action, key, value } = event.data
   if (action == 'save'){
     window.localStorage.setItem(key, JSON.stringify(value))
@@ -18,3 +18,4 @@ function messageHandler(event) {
     }, '*')
   }
 }
+window.addEventListener("message", messageHandler, false);
